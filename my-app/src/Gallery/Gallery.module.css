@@ -1,0 +1,17 @@
+.examples__box {
+  width: 70%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  justify-content: center;
+  place-items: center;
+  grid-gap: 10px;
+  margin: 15vh 0 5vh;
+}
+
+.example__img {
+  background-color: var(--background-color-5);
+  height: 260px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}

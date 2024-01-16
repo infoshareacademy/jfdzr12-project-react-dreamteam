@@ -1,4 +1,5 @@
 import { Panel } from "./Panel/Panel"
+import styles from './PricePanel.module.css'
 
 const options = [
   {
@@ -20,11 +21,12 @@ const options = [
 
 export const PricePanel = () => {
   return (
-
-    options.map(({ name, price, condition }) => {
-      return (
-        <Panel key={name} name={name} price={price} condition={condition} />
-      )
-    })
+    <div className={styles.pricing__box}>
+      {options.map(({ name, price, condition }) => {
+        return (
+          <Panel key={name} name={name} price={price} condition={condition} />
+        )
+      })}
+    </div>
   )
 }
