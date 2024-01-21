@@ -3,6 +3,8 @@ import { LandingPage } from './LandingPage/LandingPage'
 import { PricePanel } from './PricePanel/PricePanel'
 import { Gallery } from './Gallery/Gallery'
 import styles from './App.module.css'
+import Form from './Form/Form'
+
 
 function App() {
 
@@ -11,6 +13,7 @@ function App() {
       <LandingPage />
       <Gallery />
       <PricePanel />
+      <Form />
     </main>
 
   )
