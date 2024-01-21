@@ -30,7 +30,11 @@ export const LandingPage = () => {
     }
   };
 
-
+  const changeSlogan = () => {
+    if (slogan < 2) {
+      setSlogan(slogan + 1);
+    }
+  };
 
   return (
     <section className={styles.landingPage__box}>
