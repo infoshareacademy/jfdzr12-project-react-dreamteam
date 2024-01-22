@@ -27,7 +27,7 @@
   font-weight: 800;
 }
 
-.landingPage_title b:last-child {
+.last__b {
   text-decoration: underline;
   background-image: var(--background-gradient);
   -webkit-background-clip: text;
