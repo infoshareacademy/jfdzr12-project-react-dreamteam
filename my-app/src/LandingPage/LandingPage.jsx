@@ -9,7 +9,7 @@ export const LandingPage = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setSlogan(prevSlogan => (prevSlogan + 1) % 3);
-    }, 5000);
+    }, 2000);
 
     return () => {
       clearInterval(interval);
@@ -20,19 +20,25 @@ export const LandingPage = () => {
   const getSloganPart = () => {
     switch (slogan) {
       case 0:
-        return 'Your moments';
+        return (
+          <>
+            Your <b>moments</b>
+          </>
+        );
       case 1:
-        return 'My passion';
+        return (
+          <>
+            My <b>passion</b>
+          </>
+        );
       case 2:
-        return 'Our story';
+        return (
+          <>
+            Our <b className={styles.last__b}>story</b>
+          </>
+        );
       default:
         return '';
-    }
-  };
-
-  const changeSlogan = () => {
-    if (slogan < 2) {
-      setSlogan(slogan + 1);
     }
   };
 
