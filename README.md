@@ -6,3 +6,4 @@
   - [x] [Komunikacja z API](docs/03-http/README.md)
   - [x] [Formularze](docs/04-form/README.md)
 - [ ] [Routing](docs/05-routing/README.md)
+- [ ] [Globalny stan aplikacji - Context API](docs/06-context/README.md)
