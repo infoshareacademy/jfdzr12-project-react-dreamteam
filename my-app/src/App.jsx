@@ -4,16 +4,23 @@ import { PricePanel } from './PricePanel/PricePanel'
 import { Gallery } from './Gallery/Gallery'
 import styles from './App.module.css'
 import Form from './Form/Form'
-
+import { Routes, Route, BrowserRouter, Navigate, Outlet } from 'react-router-dom'
+import {Navigation} from './Navigation/Navigation'
 
 function App() {
 
   return (
     <main className={styles.main}>
-      <LandingPage />
-      <Gallery />
-      <PricePanel />
-      <Form />
+      
+      <BrowserRouter>
+
+        <Navigation />
+        
+        <Routes>
+          <Route path="/" element={<><LandingPage/><PricePanel/><Form/></>}></Route>
+          <Route path="/gallery" element ={<Gallery />}></Route>
+        </Routes>
+      </BrowserRouter>
     </main>
 
   )

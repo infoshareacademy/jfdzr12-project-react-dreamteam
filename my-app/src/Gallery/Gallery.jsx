@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import styles from './Gallery.module.css'
+import styles from './Gallery.module.css';
 
 
 export const Gallery = () => {
@@ -43,7 +43,7 @@ export const Gallery = () => {
 
   return (
     <section className={styles.examples__box}>
-      {gallery.map((image) => { return <img src={image} key={image} className={styles.example__img} /> })}
+      {gallery.map((image) => { return <img src={image.src} key={image} className={styles.example__img} /> })}
     </section>
   )
 }
