@@ -4,7 +4,7 @@ import styles from './LandingPage.module.css'
 
 export const LandingPage = () => {
 
-  const [slogan, setSlogan] = useState(0);
+  const [slogan, setSlogan] = useState (0);
 
   useEffect(() => {
     const interval = setInterval(() => {

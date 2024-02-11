@@ -1,16 +1,19 @@
 import { useEffect, useState } from 'react';
 import styles from './Gallery.module.css';
-import { NavLink, Outlet, useNavigate } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 
+interface GaleryDetail{
+  id: string,
+  src: string
+}
 
 export const Gallery = () => {
 
-  const [gallery, setGallery] = useState([]);
+  const [gallery, setGallery] = useState<GaleryDetail[]>([]);
   // dodane useNavigate
   const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchData = () => {
       fetch("/photos.json")
       .then(res => {
         if(!res.ok) {
@@ -20,9 +23,6 @@ export const Gallery = () => {
       })
       .then(gallery => {console.log('Loaded gallery data:', gallery); setGallery(gallery)})
       .catch(error => console.error(error))
-    };
-
-    fetchData();
   }, []);
 
   // useEffect(() => {
@@ -45,6 +45,8 @@ export const Gallery = () => {
   // }, []);
 
   return (
+    <>
+    {gallery && (
     <section className={styles.examples__box}>
       {/* dodana funkcja ocClick z nawigowaniem */}
       {gallery.map((image) => (<img src={image.src} key={image.id} className={styles.example__img} onClick={() => navigate(`${image.id}`)}/>))}
@@ -52,5 +54,7 @@ export const Gallery = () => {
         <Outlet context={gallery}/>
       </div>
     </section>
-  )
+    )}
+    </>
+  );  
 }

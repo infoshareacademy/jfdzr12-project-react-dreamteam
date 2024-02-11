@@ -1,6 +1,12 @@
 import styles from './Panel.module.css'
 
-export const Panel = (props) => {
+interface ProductProps{
+  name: string;
+  price: string;
+  condition: string[]
+}
+
+export const Panel = (props: ProductProps) => {
   return (
     <div className={styles.box}>
       <h3 className={styles.box__name}>{props.name}</h3>

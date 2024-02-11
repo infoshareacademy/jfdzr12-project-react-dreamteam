@@ -19,6 +19,7 @@ const options = [
   }
 ]
 
+
 export const PricePanel = () => {
   return (
     <div className={styles.pricing__box}>

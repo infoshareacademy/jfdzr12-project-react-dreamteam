@@ -1,5 +1,5 @@
 import { useOutletContext, useParams } from 'react-router-dom';
-import styles from './Gallery.module.css';
+// import styles from '.Gallery/Gallery.module.css';
 
 export const Image = () => {
     const { id } = useParams();
@@ -11,12 +11,14 @@ export const Image = () => {
     const selectedImage = gallery.find(img => id == img.id);
     console.log(selectedImage)
 
+    console.log(selectedImage.src)
+
     if (!selectedImage) {
         return <div>Loading...</div>;
     }
 
     return (
-            <div className={styles.image}><img src={selectedImage.src} /></div>
+            <div><img src={selectedImage.src} /></div>
     );
 };
 
