@@ -3,9 +3,10 @@ export const Navigation = () => {
     return (
         <nav className="navigation-header">
             <div className="app-logo"></div>
+            <NavLink className='menu-item' to='/'>Home</NavLink>
             <NavLink className='menu-item' to='/gallery'>Gallery</NavLink>
             <NavLink className='menu-item' to='/pricing'>Pricing</NavLink>
-            <NavLink className='menu-item' to='/basket'>Basket</NavLink>
+            <NavLink className='menu-item' to='/contactform'>Contact</NavLink>
         </nav>
     )
 }
