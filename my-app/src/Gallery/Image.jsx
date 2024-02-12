@@ -1,35 +1,33 @@
-import { useOutletContext, useParams } from 'react-router-dom';
-// import styles from '.Gallery/Gallery.module.css';
+import { Link, NavLink, useOutletContext, useParams } from 'react-router-dom';
+import styles from './Image.module.css';
+
 
 export const Image = () => {
+    
     const { id } = useParams();
-    console.log(id)
 
     const gallery = useOutletContext();
-    console.log(gallery)
 
     const selectedImage = gallery.find(img => id == img.id);
-    console.log(selectedImage)
-
-    console.log(selectedImage.src)
 
     if (!selectedImage) {
         return <div>Loading...</div>;
     }
 
     return (
-            <div><img src={selectedImage.src} /></div>
-    );
+            <form className={styles.product__card}>
+                <input type="image" alt={selectedImage.title} src={`/public/${selectedImage.src}`} className={styles.form__img}/>
+                <div className={styles.form_card}>
+                    <div className={styles.form_information}>
+                        <Link to="/gallery"className={styles.form__closeBtn}>×</Link>
+                        <h2 className={styles.form__title}>{selectedImage.title}</h2>
+                        <p className={styles.form__price}>{`$${selectedImage.price}`}</p>
+                        <span className={styles.form__hash}>{`#${selectedImage.tag1}`}</span>
+                        <span className={styles.form__hash}>{`#${selectedImage.tag2}`}</span>
+                        <span className={styles.form__hash}>{`#${selectedImage.tag3}`}</span>
+                    </div>
+                    <Link to="/gallery" className={styles.form__buy}>Add to basket</Link>
+                </div>
+            </form>
+            );
 };
-
-
-//     const {id} = useParams();
-
-// return (
-
-//     return <div>
-// zdjęcie
-
-//     </div>
-
-// )

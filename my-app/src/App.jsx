@@ -20,12 +20,10 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage/>} />
           <Route path="/gallery/*" element ={<Gallery />}>
-            {/* dynamiczna ścieżka do wyświetlania pojedynczego zdjęcia - zmienia się url po kliknięciu, w konsoli wyświetla się src klikniętego zdjęcia a na dole strony z galerią, a na dole strony pojawia się element img, ale nie ma zdjęcia */}
               <Route path=":id" element={<Image/>}/>
           </Route>
           <Route path="/pricing" element ={<PricePanel/>}/>
           <Route path="/contactform" element ={<Form/>}/>
-          {/* ścieżka do obsługi błędów nawigacji */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
