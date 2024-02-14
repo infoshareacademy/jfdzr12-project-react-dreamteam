@@ -2,8 +2,14 @@ import { useEffect, useState } from 'react';
 import styles from './Gallery.module.css';
 import { Outlet, useNavigate } from 'react-router-dom';
 
+// struktura interface zmieniona tak, żeby pasowała do zaktualizowanego photos.json
 interface GaleryDetail{
-  id: string,
+  id: number,
+  title: string,
+  price: number,
+  tag1: string,
+  tag2: string,
+  tag3: string,
   src: string
 }
 
