@@ -1,5 +1,7 @@
-import { Link, NavLink, useOutletContext, useParams } from 'react-router-dom';
+import { Link, useOutletContext, useParams } from 'react-router-dom';
 import styles from './Image.module.css';
+import { useContext } from 'react';
+import { ThemeContext } from '../providers/ThemeProvider';
 
 
 export const Image = () => {
@@ -14,8 +16,14 @@ export const Image = () => {
         return <div>Loading...</div>;
     }
 
+// dodany useContext do zmiany motywu kolorystycznego
+    const { theme } = useContext(ThemeContext);
+// dodane zmienne (stałe), które zamieniają kilka klas css na stringi; są wykorzystane jako warunkowe classNames 
+    const productCardLightClasses = [styles.product__card, styles.product__cardlight].join(' ');
+    const productCardDarkClasses = [styles.product__card, styles.product__cardDark].join(' ');
+
     return (
-            <form className={styles.product__card}>
+            <form className={theme === 'Light' ? productCardLightClasses : productCardDarkClasses}>
                 <input type="image" alt={selectedImage.title} src={`/public/${selectedImage.src}`} className={styles.form__img}/>
                 <div className={styles.form_card}>
                     <div className={styles.form_information}>

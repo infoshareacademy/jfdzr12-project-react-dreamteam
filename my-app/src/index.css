@@ -7,8 +7,15 @@
   --background-color-5: #777cd8;
   --background-color-6: #878bdc;
   --background-color-7: #777cd841;
+  --background-color-8: #042D29;
+  --background-color-9: #B78C56;
+  --background-color-10: #D4C9B4;
+  --background-color-11: #8A5082;
+  --background-color-12: #4f6c69;
   --background-gradient: linear-gradient(to right bottom, #ee87ae, #c47cc7, #777cd8);
   --background-gradient-2: linear-gradient(to right bottom, #ffbc93, #777cd8);
+  --background-image-1: url(img/tloooo.png);
+  --background-image-2: '';
 }
 
 * {
@@ -20,13 +27,14 @@
 body {
   font-family: 'Open Sans', sans-serif;
   width: 100%;
-  background-color: var(--background-color-0);
-  background-image: url(img/tloooo.png);
+  /* background-color: var(--background-color-0); */
+  /* background-image: url(img/tloooo.png); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+
 
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;

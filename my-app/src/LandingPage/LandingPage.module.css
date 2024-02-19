@@ -22,6 +22,10 @@
   align-self: center;
 }
 
+.landingPage_titleDark {
+  color: var(--background-color-1);
+}
+
 .landingPage_title b {
   font-style: normal;
   font-weight: 800;
@@ -38,7 +42,7 @@
 
 .landingPage__img {
   background-color: var(--background-color-5);
-  height: 85vh;
+  height: 70vh;
   width: 100%;
   object-fit: cover;
   border-radius: 20px;

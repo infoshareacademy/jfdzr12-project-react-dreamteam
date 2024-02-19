@@ -1,32 +1,21 @@
-:root {
-  --background-color-0: rgba(255, 255, 255, 1);
-  --background-color-1: #babdbf;
-  --background-color-2: #2b3c40;
-  --background-color-3: #587073;
-  --background-color-4: #ffbc93;
-  --background-color-5: #777cd8;
-  --background-color-6: #878bdc;
-  --background-gradient: linear-gradient(to right bottom, #ee87ae, #c47cc7, #777cd8);
-  --background-gradient-2: linear-gradient(to right bottom, #ffbc93, #777cd8);
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .box {
   flex: 0 0 calc(33.33% - 75px);
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 20px;
-  background-color: var(--background-color-0);
   padding: 2rem 1.5rem 3rem;
   width: 270px;
   min-width: 270px;
+}
+
+.boxLight {
+  background-color: var(--background-color-0);
   box-shadow: -5px 5px 10px var(--background-color-3);
+}
+
+.boxDark {
+  background-color: var(--background-color-10);
 }
 
 .box__name {
@@ -34,15 +23,20 @@
   font-weight: 700;
   margin: 0rem auto 2rem;
   text-align: center;
+}
+
+.box__nameLight {
   color: var(--background-color-5);
+}
+
+.box__nameDark {
+  color: var(--background-color-2);
 }
 
 .box__price {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--background-color-6);
-  box-shadow: inset 0 0 20px 5px var(--background-color-5);
   font-size: 2.5rem;
   font-weight: 700;
   text-align: center;
@@ -50,7 +44,17 @@
   padding: 2rem 0;
   width: 140%;
   border-radius: 10rem;
+}
+
+.box__priceLight {
+  background-color: var(--background-color-6);
+  box-shadow: inset 0 0 20px 5px var(--background-color-5);
   color: var(--background-color-0)
+}
+
+.box__priceDark {
+  background-color: var(--background-color-0);
+  color: var(--background-color-11)
 }
 
 .box__offers {
