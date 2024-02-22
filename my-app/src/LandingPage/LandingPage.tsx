@@ -1,13 +1,13 @@
 import { useContext, useEffect, useState } from 'react'
 import styles from './LandingPage.module.css'
-import { ThemeContext } from '../providers/ThemeProvider'
+import { ThemeContext } from '/../providers/ThemeProvider'
 
 
 export const LandingPage = () => {
 
-  const [slogan, setSlogan] = useState (0);
+  const [slogan, setSlogan] = useState(0);
 
-// dodany useContext do zmiany kolorystyki i zmienne (stałe), które zamieniają kilka klas css na stringi; są wykorzystane jako warunkowe classNames 
+  // dodany useContext do zmiany kolorystyki i zmienne (stałe), które zamieniają kilka klas css na stringi; są wykorzystane jako warunkowe classNames 
   const { theme } = useContext(ThemeContext);
 
   const darkTitle = [styles.landingPage_title, styles.landingPage_titleDark].join(' ');
