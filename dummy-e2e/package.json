@@ -1,0 +1,12 @@
+{
+  "name": "dummy-e2e",
+  "version": "1.0.0",
+  "scripts": {
+    "open": "cypress open",
+    "e2e": "cypress run"
+  },
+  "devDependencies": {
+    "cypress": "^13.6.6",
+    "typescript": "^5.3.3"
+  }
+}
