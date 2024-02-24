@@ -9,3 +9,4 @@
 - [x] [Globalny stan aplikacji - Context API](docs/06-context/README.md)
 - [x] [TypeScript](docs/07-typescript/README.md)
 - [ ] [Testy jednostkowe](./docs/08-testy-jednostkowe/README.md)
+- [ ] [Testy E2E](./docs/09-testy-e2e/README.md)
