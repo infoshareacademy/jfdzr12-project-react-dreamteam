@@ -1,35 +1,55 @@
 import { useEffect, useState } from 'react';
 import styles from './Gallery.module.css';
 import { Outlet, useNavigate } from 'react-router-dom';
+import {onSnapshot, collection, getDocs, doc } from 'firebase/firestore';
+import {db} from "../api/firebase";
 
 // struktura interface zmieniona tak, żeby pasowała do zaktualizowanego photos.json
-interface GaleryDetail{
-  id: number,
-  title: string,
-  price: number,
-  tag1: string,
-  tag2: string,
-  tag3: string,
-  src: string
-}
+// interface GaleryDetail{
+//   id: number,
+//   title: string,
+//   price: number,
+//   tag1: string,
+//   tag2: string,
+//   tag3: string,
+//   src: string
+// }
 
 export const Gallery = () => {
 
-  const [gallery, setGallery] = useState<GaleryDetail[]>([]);
-  // dodane useNavigate
-  const navigate = useNavigate();
+  const [gallery, setGallery] = useState();
 
-  useEffect(() => {
-      fetch("/photos.json")
-      .then(res => {
-        if(!res.ok) {
-          throw new Error("Error")
-        }
-        return res.json();
-      })
-      .then(gallery => {console.log('Loaded gallery data:', gallery); setGallery(gallery)})
-      .catch(error => console.error(error))
-  }, []);
+  const getData = () => {
+    const photosCollection = collection(db, "photos")
+    onSnapshot(photosCollection, res => {
+            const photos = res.docs.map(doc => ({
+                id: doc.id,
+                ...doc.data()
+            }))
+            setGallery(photos)
+        })
+}
+useEffect(() => {
+    getData()
+}, [])
+
+const navigate = useNavigate();
+
+  // const [gallery, setGallery] = useState<GaleryDetail[]>([]);
+  // dodane useNavigate
+
+
+  // useEffect(() => {
+  //     fetch("/photos.json")
+  //     .then(res => {
+  //       if(!res.ok) {
+  //         throw new Error("Error")
+  //       }
+  //       return res.json();
+  //     })
+  //     .then(gallery => {console.log('Loaded gallery data:', gallery); setGallery(gallery)})
+  //     .catch(error => console.error(error))
+  // }, []);
 
   // useEffect(() => {
   //   const fetchData = () => {
