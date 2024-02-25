@@ -7,6 +7,7 @@ export default mergeConfig(viteConfig, defineConfig({
 		include: ['**/*.{test,spec}.{js,jsx,ts,tsx}'],
 		setupFiles: [
 			'./vitest.setup.ts'
-		]
+		],
+		globals: true,
 	}
 }));
