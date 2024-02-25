@@ -52,7 +52,7 @@ export function SignInForm({
 					<Input name='email' type='email'/>
 				</Label>
 
-				<Label htmlFor='password'>
+				<Label>
 					Password
 					<Input name='password' type='password'/>
 				</Label>
