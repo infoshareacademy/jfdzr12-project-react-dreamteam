@@ -8,7 +8,8 @@
 - [x] [Routing](docs/05-routing/README.md)
 - [x] [Globalny stan aplikacji - Context API](docs/06-context/README.md)
 - [x] [TypeScript](docs/07-typescript/README.md)
-- [ ] [Testy jednostkowe](./docs/08-testy-jednostkowe/README.md)
-- [ ] [Testy E2E](./docs/09-testy-e2e/README.md)
+- [x] [Testy jednostkowe](./docs/08-testy-jednostkowe/README.md)
+- [x] [Testy E2E](./docs/09-testy-e2e/README.md)
 - Firebase
-    - [ ] [Podstawy](./docs/10-firebase-podstawy/README.md)
+    - [x] [Podstawy](./docs/10-firebase-podstawy/README.md)
+    - [ ] [Zabezpieczenie dostępu do danych](./docs/11-firebase-auth/README.md)
