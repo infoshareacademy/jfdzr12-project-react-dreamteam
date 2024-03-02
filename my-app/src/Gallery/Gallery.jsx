@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import styles from './Gallery.module.css';
 import { Outlet, useNavigate } from 'react-router-dom';
-import {onSnapshot, collection, getDocs, doc } from 'firebase/firestore';
-import {db} from "../api/firebase";
+import { onSnapshot, collection, getDocs, doc } from 'firebase/firestore';
+import { db } from "../api/firebase";
 
 // struktura interface zmieniona tak, żeby pasowała do zaktualizowanego photos.json
 // interface GaleryDetail{
@@ -22,18 +22,18 @@ export const Gallery = () => {
   const getData = () => {
     const photosCollection = collection(db, "photos")
     onSnapshot(photosCollection, res => {
-            const photos = res.docs.map(doc => ({
-                id: doc.id,
-                ...doc.data()
-            }))
-            setGallery(photos)
-        })
-}
-useEffect(() => {
+      const photos = res.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+      }))
+      setGallery(photos)
+    })
+  }
+  useEffect(() => {
     getData()
-}, [])
+  }, [])
 
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
   // const [gallery, setGallery] = useState<GaleryDetail[]>([]);
   // dodane useNavigate
@@ -72,15 +72,15 @@ const navigate = useNavigate();
 
   return (
     <>
-    {gallery && (
-    <section className={styles.examples__box}>
-      {/* dodana funkcja ocClick z nawigowaniem */}
-      {gallery.map((image) => (<img src={image.src} key={image.id} className={styles.example__img} onClick={() => navigate(`${image.id}`)}/>))}
-      <div>
-        <Outlet context={gallery}/>
-      </div>
-    </section>
-    )}
+      {gallery && (
+        <section className={styles.examples__box}>
+          {/* dodana funkcja ocClick z nawigowaniem */}
+          {gallery.map((image) => (<img src={image.src} key={image.id} className={styles.example__img} onClick={() => navigate(`${image.id}`)} />))}
+          <div>
+            <Outlet context={gallery} />
+          </div>
+        </section>
+      )}
     </>
-  );  
+  );
 }

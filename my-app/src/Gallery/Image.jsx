@@ -24,8 +24,7 @@ export const Image = () => {
 
     return (
         <form className={theme === 'Light' ? productCardLightClasses : productCardDarkClasses}>
-            {/*KR zmieniłam src w json więc powinno starczyć teraz src={selectedImage.src}  */}
-            <input type="image" alt={selectedImage.title} src={selectedImage.src} className={styles.form__img} />
+            <input type="image" alt={selectedImage.title} src={`/public/&{selectedImage.src}`} className={styles.form__img} />
             <div className={styles.form_card}>
                 <div className={styles.form_information}>
                     <Link to="/gallery" className={styles.form__closeBtn}>×</Link>
