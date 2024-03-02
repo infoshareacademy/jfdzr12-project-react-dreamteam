@@ -1,8 +1,17 @@
-import { createContext, useState } from "react";
+import { Dispatch, ReactNode, SetStateAction, createContext, useState } from "react";
 
-export const ThemeContext = createContext('theme')
+interface ThemeContextProvider {
+    theme: string;
+    setTheme: Dispatch<SetStateAction<string>>;
+}
 
-export const ThemeProvider = ({children}) => {
+interface ThemeProviderProps {
+    children: ReactNode;
+}
+
+export const ThemeContext = createContext<ThemeContextProvider>({theme: 'Light', setTheme: () => {}})
+
+export const ThemeProvider = ({children}:ThemeProviderProps) => {
     const [theme, setTheme] = useState('Light');
     // if określa, jaki jest obraz i tło body po załadowaniu strony, przed kliknięciem w przycisk
     if(theme === 'Light') {
@@ -17,7 +26,3 @@ export const ThemeProvider = ({children}) => {
         )
 
 }
-
-
-
-
