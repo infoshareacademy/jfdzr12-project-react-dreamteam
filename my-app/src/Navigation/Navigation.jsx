@@ -38,7 +38,7 @@ export const Navigation = () => {
       <div className={styles.header__box}>
         <NavLink to="/" className={styles.logo__box}>
           <div className={styles.logo}>
-            <img className={isDarkMode ? darkLogo : lightLogo} src="/img/example.svg" alt="logo image example" />
+            <img className={isDarkMode ? darkLogo : lightLogo} src={isDarkMode ? "/img/exampleLight.svg" : "/img/example.svg"} alt="logo image example" />
             <p className={isDarkMode ? darkLogo : lightLogo}>PhotoToTo</p>
           </div>
         </NavLink>
