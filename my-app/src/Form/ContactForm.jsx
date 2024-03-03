@@ -65,13 +65,16 @@ const ContactForm = () => {
   const darkContactUs = [styles.contactUs, styles.contactUs__dark].join(' ')
   const lightInput = [styles.form__input, styles.form__inputLight].join(' ');
   const darkInput = [styles.form__input, styles.form__inputDark].join(' ');
+  const lightInputName = [styles.form__inputName, styles.form__inputNameLight].join(' ');
+  const darkInputName = [styles.form__inputName, styles.form__inputNameDark].join(' ');
+
 
   return (
     <form className={theme === 'Light' ? formCardLightClasses : formCardDarkClasses} onSubmit={handleSubmit}>
       <div className={theme === 'Light' ? lightContactUs : darkContactUs}>
         Contact us
       </div>
-      <div className={styles.form__inputName}>
+      <div className={theme === 'Light' ? lightInputName : darkInputName}>
         <label htmlFor="title">Title:</label>
       </div>
       <div>
@@ -86,7 +89,7 @@ const ContactForm = () => {
         <div className={styles.error}>{errors.title}</div>
       </div>
 
-      <div className={styles.form__inputName}>
+      <div className={theme === 'Light' ? lightInputName : darkInputName}>
         <label htmlFor="email">E-mail:</label>
       </div>
       <div>
@@ -101,7 +104,7 @@ const ContactForm = () => {
         <div className={styles.error}>{errors.email}</div>
       </div>
 
-      <div className={styles.form__inputName}>
+      <div className={theme === 'Light' ? lightInputName : darkInputName}>
         <label htmlFor="message">Message:</label>
       </div>
       <div>

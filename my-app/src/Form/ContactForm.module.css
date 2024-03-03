@@ -45,9 +45,16 @@
   text-transform: uppercase;
   font-size: 0.75rem;
   font-weight: 600;
-  color: var(--background-color-2);
   margin: 1.5rem 0 0.25rem;
   letter-spacing: 0.1rem;
+}
+
+.form__inputNameLight {
+  color: var(--background-color-2);
+}
+
+.form__inputNameDark {
+  color: var(--background-color-0);
 }
 
 .form__input {
