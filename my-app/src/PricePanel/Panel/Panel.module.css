@@ -15,7 +15,8 @@
 }
 
 .boxDark {
-  background-color: var(--background-color-10);
+  background-color: var(--background-color-21);
+  box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 .box__name {
@@ -30,7 +31,7 @@
 }
 
 .box__nameDark {
-  color: var(--background-color-2);
+  color: var(--background-color-0);
 }
 
 .box__price {
@@ -44,25 +45,24 @@
   padding: 2rem 0;
   width: 140%;
   border-radius: 10rem;
-}
-
-.box__priceLight {
   background-color: var(--background-color-6);
   box-shadow: inset 0 0 20px 5px var(--background-color-5);
-  color: var(--background-color-0)
-}
-
-.box__priceDark {
-  background-color: var(--background-color-0);
-  color: var(--background-color-11)
+  color: var(--background-color-0);
+  margin-bottom: 2rem;
 }
 
 .box__offers {
   font-size: 1.5rem;
   line-height: 3rem;
   list-style-position: inside;
-  margin: 2.5rem auto 0;
+}
+
+.box__offersLight {
   color: var(--background-color-2);
+}
+
+.box__offersDark {
+  color: var(--background-color-0);
 }
 
 .offer__condition {

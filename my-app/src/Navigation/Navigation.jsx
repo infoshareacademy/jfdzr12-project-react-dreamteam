@@ -6,68 +6,51 @@ import '../index.css'
 
 export const Navigation = () => {
 
-// dodany useContext do zmiany kolorystyki, useState do obsługi przycisku zmieniającego motywy kolorystyczne,
-//  i zmienne (stałe), które zamieniają kilka klas css na stringi; są wykorzystane jako warunkowe classNames 
+  // dodany useContext do zmiany kolorystyki, useState do obsługi przycisku zmieniającego motywy kolorystyczne,
+  //  i zmienne (stałe), które zamieniają kilka klas css na stringi; są wykorzystane jako warunkowe classNames 
 
-    const {theme, setTheme} = useContext(ThemeContext);
+  const { theme, setTheme } = useContext(ThemeContext);
 
-    const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
-    const buttonText = isDarkMode ? 'Light' : 'Dark';
+  const buttonText = isDarkMode ? 'Light' : 'Dark';
 
-    const handleOnClick = () => {
-      setIsDarkMode(!isDarkMode);
-      // tekst z przycisku jest przekazywany do theme i potem wykorzystywany w innych komponentach do warunkowej zmiany kolorystyki
-      setTheme(buttonText);
-      // kolor i tło body zmieniają się w zależności od stanu
-      document.body.style.backgroundColor = isDarkMode ? 'var(--background-color-0)' : 'var(--background-color-8)';
-      document.body.style.backgroundImage = isDarkMode ? 'var(--background-image-1)' : 'var(--background-image-2)';
-    }
+  const handleOnClick = () => {
+    setIsDarkMode(!isDarkMode);
+    // tekst z przycisku jest przekazywany do theme i potem wykorzystywany w innych komponentach do warunkowej zmiany kolorystyki
+    setTheme(buttonText);
+    // kolor i tło body zmieniają się w zależności od stanu
+    document.body.style.backgroundColor = isDarkMode ? 'var(--background-color-0)' : 'var(--background-color-8)';
+    document.body.style.backgroundImage = isDarkMode ? 'var(--background-image-1)' : 'var(--background-image-2)';
+  }
 
-    const lightBtnClasses = [styles.nav__link, styles.nav__modeBtn, styles.nav__linkLight].join(" ");
-    const darkBtnClasses = [styles.nav__link, styles.nav__modeBtn, styles.nav__linkDark].join(" ");
-    const darkNavClasses = [styles.nav__link, styles.nav__linkDark].join(" ");
-    const lightNavClasses = [styles.nav__link, styles.nav__linkLight].join(" ");
+  const lightBtnClasses = [`fa-solid`, `fa-moon`, `fa-lg`, styles.nav__modeBtnLight].join(" ");
+  const darkBtnClasses = [`fa-solid`, `fa-sun`, `fa-lg`, styles.nav__modeBtnDark].join(" ");
+  const darkNavClasses = [styles.nav__link, styles.nav__itemsDark, styles.header__dark].join(" ");
+  const lightNavClasses = [styles.nav__link, styles.nav__itemsLight, styles.header__light].join(" ");
+  const darkHeaderClasses = [styles.header, styles.header__dark].join(" ");
+  const lightHeaderClasses = [styles.header, styles.header__light].join(" ");
+  const darkLogo = [styles.logo__img, styles.logo__imgDark, styles.logo__name, styles.logo__nameDark].join(" ");
+  const lightLogo = [styles.logo__img, styles.logo__name].join(" ");
 
-    return (
-      <header className={styles.header}> 
-            {/* <nav> */}
-              <div>
-                <NavLink className={isDarkMode ? darkNavClasses : lightNavClasses} to='/'>Home</NavLink>
-                <NavLink className={isDarkMode ? darkNavClasses : lightNavClasses} to='/gallery'>Gallery</NavLink>
-                <NavLink className={isDarkMode ? darkNavClasses : lightNavClasses} to='/pricing'>Pricing</NavLink>
-                <NavLink className={isDarkMode ? darkNavClasses : lightNavClasses} to='/contactform'>Contact</NavLink>
-              </div>
-                <button className={isDarkMode ? darkBtnClasses : lightBtnClasses} onClick={handleOnClick}>{buttonText} mode</button>
-            {/* </nav> */}
-      </header>
-    )
-}
-
-{/* <NavLink
-end
-className={({ isActive, isPending }) =>
-  isActive ?"menu-item menu-item__active" : "menu-item"
-  } to="/" >
-   Home
- </NavLink> */}
-
-{/* <header class="header"> 
-      <div class="header__top">
-        <div class="header__box">
-          <a href="#Top" class="nav__logo">
-            <img class="header__img" src="img/FOTO_TOTO.png" alt="logo"
-          /></a>
-          <nav class="header__nav">
-            <ul class="nav__items">
-              <li class="nav__item">
-                <a href="#Example" class="nav__link">Examples</a>
-              </li>
-              <li class="nav__item">
-                <a href="#Pricing" class="nav__link">Pricing</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
+  return (
+    <header className={isDarkMode ? darkHeaderClasses : lightHeaderClasses}>
+      <div className={styles.header__box}>
+        <NavLink to="/" className={styles.logo__box}>
+          <div className={styles.logo}>
+            <img className={isDarkMode ? darkLogo : lightLogo} src="/img/example.svg" alt="logo image example" />
+            <p className={isDarkMode ? darkLogo : lightLogo}>PhotoToTo</p>
+          </div>
+        </NavLink>
+        <nav className={styles.nav}>
+          <ul className={styles.nav__items}>
+            <li><NavLink to="/gallery" className={isDarkMode ? darkNavClasses : lightNavClasses} >Gallery</NavLink></li>
+            <li><NavLink to="/pricing" className={isDarkMode ? darkNavClasses : lightNavClasses} >Pricing</NavLink></li>
+            <li><NavLink to="/contact" className={isDarkMode ? darkNavClasses : lightNavClasses} >Contact</NavLink></li>
+            <i className={isDarkMode ? darkBtnClasses : lightBtnClasses} onClick={handleOnClick}></i>
+          </ul>
+        </nav>
       </div>
-    </header> */}
+    </header>
+  )
+}

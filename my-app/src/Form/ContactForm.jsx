@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react'
-import styles from './Form.module.css'
+import styles from './ContactForm.module.css'
 import { ThemeContext } from '../providers/ThemeProvider';
 
 
@@ -53,25 +53,30 @@ const ContactForm = () => {
     }
   }
 
-    const handleChangeValue = (e) => {
+  const handleChangeValue = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
-// dodany useContext do zmiany motywu kolorystycznego
+  // dodany useContext do zmiany motywu kolorystycznego
   const { theme } = useContext(ThemeContext);
-// dodane zmienne (stałe), które zamieniają kilka klas css na stringi; są wykorzystane jako warunkowe classNames 
+  // dodane zmienne (stałe), które zamieniają kilka klas css na stringi; są wykorzystane jako warunkowe classNames 
   const formCardLightClasses = [styles.form__card, styles.form__cardLight].join(' ');
   const formCardDarkClasses = [styles.form__card, styles.form__cardDark].join(' ');
-  const formBtnLightClasses = [styles.form__btn, styles.form__btnLight].join(' ');
-  const formBtnDarkClasses = [styles.form__btn, styles.form__btnDark].join(' ');
+  const lightContactUs = [styles.contactUs, styles.contactUs__light].join(' ')
+  const darkContactUs = [styles.contactUs, styles.contactUs__dark].join(' ')
+  const lightInput = [styles.form__input, styles.form__inputLight].join(' ');
+  const darkInput = [styles.form__input, styles.form__inputDark].join(' ');
 
   return (
     <form className={theme === 'Light' ? formCardLightClasses : formCardDarkClasses} onSubmit={handleSubmit}>
+      <div className={theme === 'Light' ? lightContactUs : darkContactUs}>
+        Contact us
+      </div>
       <div className={styles.form__inputName}>
         <label htmlFor="title">Title:</label>
       </div>
       <div>
         <input
-          className={styles.form__input}
+          className={theme === 'Light' ? lightInput : darkInput}
           type="text"
           id="title"
           name="title"
@@ -86,7 +91,7 @@ const ContactForm = () => {
       </div>
       <div>
         <input
-          className={styles.form__input}
+          className={theme === 'Light' ? lightInput : darkInput}
           type="email"
           id="email"
           name="email"
@@ -101,7 +106,7 @@ const ContactForm = () => {
       </div>
       <div>
         <textarea
-          className={styles.form__input}
+          className={theme === 'Light' ? lightInput : darkInput}
           id="message"
           name="message"
           value={form.message}
@@ -110,7 +115,7 @@ const ContactForm = () => {
         <div className={styles.error}>{errors.message}</div>
       </div>
 
-      <button className={theme === 'Light' ? formBtnLightClasses : formBtnDarkClasses} type="submit">Send</button>
+      <button className={styles.form__btn} type="submit">Send</button>
     </form>
   )
 }

@@ -20,13 +20,13 @@ export const Gallery = () => {
   const [gallery, setGallery] = useState();
 
   const getData = () => {
-    const photosCollection = collection(db, "photos")
+    const photosCollection = collection(db, "photosNew")
     onSnapshot(photosCollection, res => {
-      const photos = res.docs.map(doc => ({
+      const photosNew = res.docs.map(doc => ({
         id: doc.id,
         ...doc.data()
       }))
-      setGallery(photos)
+      setGallery(photosNew)
     })
   }
   useEffect(() => {
@@ -75,7 +75,7 @@ export const Gallery = () => {
       {gallery && (
         <section className={styles.examples__box}>
           {/* dodana funkcja ocClick z nawigowaniem */}
-          {gallery.map((image) => (<img src={image.src} key={image.id} className={styles.example__img} onClick={() => navigate(`${image.id}`)} />))}
+          {gallery.map((image) => (<img src={`/img/${image.src}`} key={image.id} className={styles.example__img} onClick={() => navigate(`${image.id}`)} />))}
           <div>
             <Outlet context={gallery} />
           </div>

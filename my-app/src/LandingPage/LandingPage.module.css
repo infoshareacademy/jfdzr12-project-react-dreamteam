@@ -20,10 +20,11 @@
   font-style: italic;
   line-height: 1.3em;
   align-self: center;
+  justify-self: center;
 }
 
 .landingPage_titleDark {
-  color: var(--background-color-1);
+  color: var(--background-color-0);
 }
 
 .landingPage_title b {

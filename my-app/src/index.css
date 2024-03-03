@@ -6,12 +6,20 @@
   --background-color-4: #ffbc93;
   --background-color-5: #777cd8;
   --background-color-6: #878bdc;
-  --background-color-7: #777cd841;
-  --background-color-8: #042D29;
+  --background-color-7: rgba(119, 124, 216, 0.255);
+  --background-color-8: rgba(0, 0, 0, 0.6);
   --background-color-9: #B78C56;
   --background-color-10: #D4C9B4;
   --background-color-11: #8A5082;
   --background-color-12: #4f6c69;
+  --background-color-13: rgba(0, 0, 0, 1);
+
+  --background-color-20: rgba(30, 30, 30, 1);
+  --background-color-21: rgba(60, 60, 60, 1);
+  --background-color-22: #494a68;
+  --background-color-23: rgba(255, 255, 255, 0.4);
+
+
   --background-gradient: linear-gradient(to right bottom, #ee87ae, #c47cc7, #777cd8);
   --background-gradient-2: linear-gradient(to right bottom, #ffbc93, #777cd8);
   --background-image-1: url(img/tloooo.png);
@@ -22,6 +30,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+a {
+  color: inherit;
 }
 
 body {
