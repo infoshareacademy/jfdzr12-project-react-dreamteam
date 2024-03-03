@@ -1,0 +1,130 @@
+.form__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  border-radius: 15px;
+  padding: 2rem;
+  position: fixed;
+  min-width: 340px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  /* display: none; */
+}
+
+.form__cardLight {
+  background-color: var(--background-color-0);
+  box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.form__cardDark {
+  background-color: var(--background-color-21);
+  box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.form__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  height: 2.8rem;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  color: var(--background-color-0);
+  background-color: var(--background-color-6);
+  box-shadow: inset 0 0 20px 5px var(--background-color-5);
+}
+
+.form__inputName {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.25rem;
+  letter-spacing: 0.1rem;
+}
+
+.form__inputNameLight {
+  color: var(--background-color-2);
+}
+
+.form__inputNameDark {
+  color: var(--background-color-0);
+}
+
+.form__input {
+  width: 100%;
+  padding: 0.5rem;
+  outline: none;
+  margin-bottom: 1.5rem;
+}
+
+.form__inputLight {
+  border: 1px solid var(--background-color-7);
+  border-radius: 10px;
+  background-color: var(--background-color-7);
+}
+
+.form__inputDark {
+  border: 1px solid var(--background-color-23);
+  border-radius: 10px;
+  background-color: var(--background-color-23);
+}
+
+.form__input:focus {
+  border: 1px solid var(--background-color-6);
+}
+
+.form__input:nth-last-child(2) {
+  resize: none;
+}
+
+.form__input:nth-last-child(2)::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.form__input:nth-last-child(2)::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.form__input:nth-last-child(2)::-webkit-scrollbar-thumb {
+  background: var(--background-color-6);
+  border-radius: 6px;
+}
+
+.form__input:nth-last-child(2)::-webkit-scrollbar-thumb:hover {
+  background: var(--background-color-5);
+}
+
+.error {
+  font-size: 0.75rem;
+  margin-top: -1.5rem;
+  /* margin-top: -0.75rem; */
+  text-align: center;
+}
+
+@media screen and (max-width: 300px) {
+  .form__card {
+    margin-top: 15vh;
+  }
+}
+
+.contactUs {
+  font-family: 'Open Sans';
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.contactUs__light {
+  color: var(--background-color-13);
+}
+
+.contactUs__dark {
+  color: var(--background-color-0);
+}

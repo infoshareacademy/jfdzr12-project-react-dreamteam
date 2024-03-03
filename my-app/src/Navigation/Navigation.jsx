@@ -3,13 +3,15 @@ import styles from './Navigation.module.css';
 import { useContext, useState } from 'react';
 import { ThemeContext } from '../providers/ThemeProvider';
 import '../index.css'
+import { signOut } from 'firebase/auth';
+import { auth } from '../api/firebase';
 
-export const Navigation = () => {
+export const Navigation = ({ user }) => {
 
   // dodany useContext do zmiany kolorystyki, useState do obsługi przycisku zmieniającego motywy kolorystyczne,
   //  i zmienne (stałe), które zamieniają kilka klas css na stringi; są wykorzystane jako warunkowe classNames 
 
-  const { theme, setTheme } = useContext(ThemeContext);
+  const { setTheme } = useContext(ThemeContext);
 
   const [isDarkMode, setIsDarkMode] = useState(false);
 
@@ -47,6 +49,11 @@ export const Navigation = () => {
             <li><NavLink to="/gallery" className={isDarkMode ? darkNavClasses : lightNavClasses} >Gallery</NavLink></li>
             <li><NavLink to="/pricing" className={isDarkMode ? darkNavClasses : lightNavClasses} >Pricing</NavLink></li>
             <li><NavLink to="/contact" className={isDarkMode ? darkNavClasses : lightNavClasses} >Contact</NavLink></li>
+            <li><NavLink to="/auth/signin" className={isDarkMode ? darkNavClasses : lightNavClasses} >Sign in</NavLink></li>
+            {user && <li onClick={() => { signOut(auth) }} style={{ color: "red", textDecoration: "underline", cursor: "pointer" }}>
+              Log Out
+            </li>}
+            {/* <li><NavLink to="auth/signup" className={isDarkMode ? darkNavClasses : lightNavClasses} >Sign up</NavLink></li> */}
             <i className={isDarkMode ? darkBtnClasses : lightBtnClasses} onClick={handleOnClick}></i>
           </ul>
         </nav>
