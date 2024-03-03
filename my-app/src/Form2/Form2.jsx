@@ -2,7 +2,7 @@ import { useContext, useState } from 'react'
 import styles from './Form2.module.css'
 import { ThemeContext } from '../providers/ThemeProvider';
 
-const Form2 = ({ nameText, submitText, isPasswordHidden = false, handleSubmit }) => {
+const Form2 = ({ nameText, submitText, isPasswordHidden = false, handleSubmit, singUpText, signUpLink }) => {
 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -26,7 +26,7 @@ const Form2 = ({ nameText, submitText, isPasswordHidden = false, handleSubmit })
   const darkInputName = [styles.form__inputName, styles.form__inputNameDark].join(' ');
 
   return (
-    <form className={theme === 'Light' ? formCardLightClasses : formCardDarkClasses} onSubmit={handleSubmit}>
+    <form className={theme === 'Light' ? formCardLightClasses : formCardDarkClasses} onSubmit={onSubmit}>
 
       <div className={theme === 'Light' ? lightContactUs : darkContactUs}>
         {nameText}
@@ -50,7 +50,7 @@ const Form2 = ({ nameText, submitText, isPasswordHidden = false, handleSubmit })
         </>
       )}
 
-      <div className={styles.error}>Informacja</div>
+      <div className={styles.error}>{singUpText}{signUpLink}</div>
 
       <button className={styles.form__btn} type="submit">{submitText}</button>
     </form>)
