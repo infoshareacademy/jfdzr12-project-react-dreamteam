@@ -8,7 +8,7 @@
       "groom",
       "wedding"
     ],
-    "src": "img/bride-8182890_1280.jpg"
+    "src": "/img/bride-8182890_1280.jpg"
   },
   {
     "id": 2,
@@ -19,13 +19,13 @@
       "animals",
       "friends"
     ],
-    "src": "img/cat.jpg"
+    "src": "/img/cat.jpg"
   },
   {
     "id": 3,
     "title": "Children",
     "price": 10,
-    "src": "img/children-817365_1280.jpg"
+    "src": "/img/children-817365_1280.jpg"
   },
   {
     "id": 4,
@@ -36,7 +36,7 @@
       "beauty",
       "landscape"
     ],
-    "src": "img/examplephoto.jpg"
+    "src": "/img/examplephoto.jpg"
   },
   {
     "id": 5,
@@ -47,7 +47,7 @@
       "architecture",
       "travel"
     ],
-    "src": "img/liberec-5285846_1280.jpg"
+    "src": "/img/liberec-5285846_1280.jpg"
   },
   {
     "id": 6,
@@ -58,7 +58,7 @@
       "woman",
       "animals"
     ],
-    "src": "img/nature-3106213_1280.jpg"
+    "src": "/img/nature-3106213_1280.jpg"
   },
   {
     "id": 7,
@@ -69,7 +69,7 @@
       "nature",
       "green"
     ],
-    "src": "img/park-7407081_1280.jpg"
+    "src": "/img/park-7407081_1280.jpg"
   },
   {
     "id": 8,
@@ -80,6 +80,6 @@
       "beauty",
       "nature"
     ],
-    "src": "img/woman-1509956_1280.jpg"
+    "src": "/img/woman-1509956_1280.jpg"
   }
 ]
