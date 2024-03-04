@@ -7,9 +7,7 @@ interface GaleryDetail{
   id: number,
   title: string,
   price: number,
-  tag1: string,
-  tag2: string,
-  tag3: string,
+  tag: string[],
   src: string
 }
 
