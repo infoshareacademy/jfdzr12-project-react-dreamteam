@@ -13,19 +13,17 @@ export const Image = () => {
 
 	const selectedImage = gallery.find(img => id == img.id);
 
+	const { theme } = useContext(ThemeContext);
+
+	const productCardClasses = theme === 'Light' ? [styles.product__card, styles.product__cardlight].join(' ') : [styles.product__card, styles.product__cardDark].join(' ');
+
 	if (!selectedImage) {
 		return <div>Loading...</div>;
 	}
 
-	// dodany useContext do zmiany motywu kolorystycznego
-	const { theme } = useContext(ThemeContext);
-	// dodane zmienne (stałe), które zamieniają kilka klas css na stringi; są wykorzystane jako warunkowe classNames
-	const productCardLightClasses = [styles.product__card, styles.product__cardlight].join(' ');
-	const productCardDarkClasses = [styles.product__card, styles.product__cardDark].join(' ');
-
 	return (
 		<section className={styles.product__background}>
-			<form className={theme === 'Light' ? productCardLightClasses : productCardDarkClasses}>
+			<form className={productCardClasses}>
 				<input type="image" alt={selectedImage.title} src={`/img/${selectedImage.src}`} className={styles.form__img} />
 				<div className={styles.form_card}>
 					<div className={styles.form_information}>
@@ -34,9 +32,6 @@ export const Image = () => {
 						<p className={styles.form__price}>{`$${selectedImage.price}`}</p>
 						{/* KR: zmieniłam tahi na jedną listę w json i zmapowałam tagi oraz zakomentowałam stary zapis */}
 						{selectedImage.tag.map(el => { return <span key={el} className={styles.form__hash}>{`#${el}`}</span> })}
-						{/* <span className={styles.form__hash}>{`#${selectedImage.tag1}`}</span>
-                    <span className={styles.form__hash}>{`#${selectedImage.tag2}`}</span>
-                    <span className={styles.form__hash}>{`#${selectedImage.tag3}`}</span> */}
 					</div>
 					<Link to="/gallery" className={styles.form__buy}>Add to basket</Link>
 				</div>
