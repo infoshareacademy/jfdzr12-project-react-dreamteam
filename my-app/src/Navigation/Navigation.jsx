@@ -13,7 +13,7 @@ export const Navigation = ({ user }) => {
 
   // const { setTheme } = useContext(ThemeContext);
 
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  // const [isDarkMode, setIsDarkMode] = useState(false);
 
   const buttonText = isDarkMode ? 'Light' : 'Dark';
 
