@@ -11,7 +11,7 @@ export const Navigation = ({ user }) => {
   // dodany useContext do zmiany kolorystyki, useState do obsługi przycisku zmieniającego motywy kolorystyczne,
   //  i zmienne (stałe), które zamieniają kilka klas css na stringi; są wykorzystane jako warunkowe classNames 
 
-  // const { setTheme } = useContext(ThemeContext);
+  const { setTheme } = useContext(ThemeContext);
 
   const [isDarkMode, setIsDarkMode] = useState(false);
 
